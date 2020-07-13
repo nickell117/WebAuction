@@ -1,0 +1,39 @@
+﻿@model IQueryable<User>
+
+
+
+<form>
+    <button asp-controller="User" asp-action="Register"
+            formmethod="get" class="btn btn-success btn-sm">
+        Register
+    </button>
+
+    <button asp-controller="User" asp-action="Login"
+            formmethod="get" class="btn btn-danger btn-sm">
+        Login
+    </button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="3"> <hr /> </th>
+        </tr>
+        <tr>
+            <th> Id </th>
+            <th> Username (Email) </th>
+            <th> Password </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (User user in @Model)
+        {
+            <tr>
+                <td> @user.Id </td>
+                <td> @user.Email </td>
+                <td> @user.Password </td>
+            </tr>
+        }
+    </tbody>
+</table>

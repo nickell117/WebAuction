@@ -1,0 +1,28 @@
+﻿@model Listing
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> SportsStore </title>
+</head>
+<body>
+    <h3> @Model.Title </h3>
+    <p> @Model.Description </p>
+    @if (Model.Startbid < Model.Currentbid)
+    {
+        <h4> @Model.Currentbid.ToString("c") </h4>
+    }
+    else
+    {
+        <h4> @Model.Startbid.ToString("c") </h4>
+    }
+    <a asp-action="Index" class="badge badge-primary"> Back </a>
+    <a asp-action="Update" class="badge badge-warning" asp-route-id="@Model.Id"> Edit </a>
+    <a asp-action="Delete" class="badge badge-danger" asp-route-id="@Model.Id"> Delete </a>
+    <a asp-controller="Bid" asp-action="Add" asp-route-id="@Model.Id" formmethod="get" class="btn btn-info btn-sm text-right">
+        Place a Bid
+    </a>
+</body>
+</html>

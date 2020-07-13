@@ -1,0 +1,26 @@
+﻿@model Bid
+
+
+    <fieldset class="border border-dark d-inline-block p-2">
+        <form asp-controller="Bid" asp-action="Add" method="post">
+            <input type="hidden" asp-for="ListingId" value="@Model.ListingId" />
+            <table>
+                
+                <tr>
+                    <th class="text-right"> Bid Amount: </th>
+                    <td> <input asp-for="Price" placeholder="Bid Amount" /> </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <hr /> </td>
+                </tr>
+                <tr>
+                    <td class="text-center" colspan="2">
+                        <button type="submit" class="btn btn-success btn-sm"> Place Bid </button>
+                        <button asp-controller="Listing" asp-action="Detail" asp-route-id="@Model.ListingId" formmethod="get" class="btn btn-danger btn-sm">
+                            Cancel
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>

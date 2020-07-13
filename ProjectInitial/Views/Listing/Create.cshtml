@@ -1,0 +1,32 @@
+﻿@model Listing
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Add Listings </title>
+</head>
+<body>
+    <form asp-action="Create" method="post">
+        <table>
+            <tr>
+                <th> Title: </th>
+                <td> <input asp-for="Title" /> </td>
+            </tr>
+            <tr>
+                <th> Description: </th>
+                <td> <input asp-for="Description" /> </td>
+            </tr>
+            <tr>
+                <th> Start Price: </th>
+                <td> <input asp-for="Startbid"/> </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td> <input type="submit" value="Add Listing" /> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

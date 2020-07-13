@@ -1,0 +1,36 @@
+﻿@model Listing
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Add Listings </title>
+</head>
+<body>
+    <form asp-action="Update" method="post">
+        <input type="hidden" asp-for="Id" />
+        <table>
+            <tr>
+                <th> Title: </th>
+                <td> <input asp-for="Title" /> </td>
+            </tr>
+            <tr>
+                <th> Description: </th>
+                <td> <input asp-for="Description" /> </td>
+            </tr>
+            <tr>
+                <th> Price: </th>
+                <td> <input asp-for="Startbid" /> </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <button asp-action="Update" asp-route-id="@Model.Id"> Update </button>
+                    <button asp-action="Index" formmethod="get"> Cancel </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

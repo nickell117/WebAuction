@@ -1,0 +1,28 @@
+﻿@model IQueryable<Listing>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Auction </title>
+</head>
+
+<body>
+    <hr />
+    @foreach (Listing l in Model)
+    {
+        <h3><a asp-controller="Listing" asp-action="Detail" asp-route-id="@l.Id"> @l.Title  </a></h3>
+        @l.Description
+        @if (l.Startbid < l.Currentbid)
+        {
+            <h4> Current Price: @l.Currentbid.ToString("c") </h4>
+        }
+        else
+        {
+            <h4> Current Price: @l.Startbid.ToString("c") </h4>
+        } 
+        <hr />
+    }
+</body>
+</html>
